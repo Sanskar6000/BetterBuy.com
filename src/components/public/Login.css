@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+  }
+  
+.login {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+    /* background: rgb(168, 168, 168); */
+    background-image: url("https://invezz.com/wp-content/uploads/2022/07/eth-starkware-token-scaled.jpg");
+    background-position: center;
+    background-size:cover;
+    display: flex;
+  }
+.registerContainer{
+  padding: 60px;
+    margin-left: 750px;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 520px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgb(20, 20, 20) 0%,
+      rgba(62, 48, 48, 0.9) 59%,
+      rgba(123, 117, 45, 0.9) 100%
+    );
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+  .loginContainer {
+    padding: 60px;
+    margin-left: 750px;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 520px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgb(20, 20, 20) 0%,
+      rgba(62, 48, 48, 0.9) 59%,
+      rgba(123, 117, 45, 0.9) 100%
+    );
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+  }
+  .login_img{
+    height: 70px;
+  width: 70px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  }
+  .login_head
+  {
+    margin-bottom: 2px;
+    color: white;
+  }
+  .login_par{
+    margin-top: 2px;
+    color: rgb(168, 167, 167);
+    margin-bottom: 20px;
+  }
+  .login_input{
+    width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  /* color: #fff; */
+  letter-spacing: 1px;
+  }
+  .login_label
+  {
+    color: white;
+    text-align: left;
+  margin: 14px 0;
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  }
+  .loginbtnContainer{
+    width: 100%;
+  padding: 24px 0;
+  }
+  .loginbtn{
+    border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background:rgb(99, 99, 32);
+  cursor: pointer;
+  }
+  .loginbtnContainer_p{
+    margin: 14px 0 0 0;
+  text-align: right;
+  color: #fff;
+  }
+  .loginbtnContainer_pspan{
+    color: yellow;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  }
+  .loginbtnContainer_pspan:hover{
+    color: red;
+  }

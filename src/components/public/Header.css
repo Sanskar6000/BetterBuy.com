@@ -1,0 +1,86 @@
+/* Header */
+.header {
+    height: 60px;
+    display: flex;
+    align-items: centre;
+    background-color: #0097db;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  /* -----x----- */
+  
+  /* Logo */
+  .headerLogo {
+    width: 100px;
+    /* The image keeps its aspect ratio, but is resized to fit within the given dimension */
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 18px;
+  }
+  /* -----x----- */
+  
+  /* Search Bar */
+  .headerSearch {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+  }
+  
+  .headerSearchInput {
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+  }
+  
+  .headerSearchIcon {
+    padding: 4px;
+    height: 20px;
+    background-color: #cd9042;
+  }
+  /* -----x----- */
+  
+  /* Navigation Bar */
+  .headerNavbar {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .navbarOption {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 12px;
+    color: white;
+  }
+  
+  .optionLineone {
+    font-size: 12px;
+  }
+  
+  .optionLinetwo {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  
+  i {
+    font-size: 20px;
+  }
+  
+  /* Shopping Cart */
+  .navbarOptionCart {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 12px;
+  }
+  
+  .cartCount {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 0 10px 0;
+  }
