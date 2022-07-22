@@ -1,36 +1,42 @@
-import React from 'react'
-import {Webimage1} from "./img/weimg"
-import {Link} from "react-router-dom"
-import './public/Header.css'
+import React from 'react';
+
+import { Link } from 'react-router-dom';
+import './public/Header.css';
 const Navbar = (props) => {
-    const {user} =props
+  const { user } = props;
 
   return (
-    <div className='n'>
+    <>
+      <div className="n">
         <nav>
-<div className="c">
- <Link to ="/">  
-<Webimage1/>
-</Link> 
-<h3>Better Buy</h3>
-<p>About Us</p>
+          <div className="c">
+            <Link to="/">
+              {' '}
+              <img
+                className="headerLogo"
+                src="https://i.postimg.cc/Dyy8jH0S/logo-bestd.jpg"
+                alt="logo"
+              />
+            </Link>
+            <h3>Better Buy</h3>
+            <p>About Us</p>
 
-<input id="searchbar" type="text"
-name="search" placeholder="   Search for shoes...">
+            <input
+              id="searchbar"
+              type="text"
+              name="search"
+              placeholder="   Search for shoes..."
+            ></input>
+          </div>
+          <div className="login1">
+            <Link to="/login">
+              <h3>Logout</h3>
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
+};
 
-</input>
-
-
-</div>
-<div className='login1'>
-
-<Link to="/login">
-<h3>Logout</h3>
-</Link>
-</div>
-</nav>
-</div> 
-  )
-}
-
-export default Navbar
+export default Navbar;

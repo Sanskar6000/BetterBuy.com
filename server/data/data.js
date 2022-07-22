@@ -12,7 +12,7 @@ const data = {
       description: 'Nice Product',
       countInStock: 10,
       customername: 'vartik',
-      serialnumber: 12345-6789,
+      serialnumber: 12345 - 6789,
       issuetime: '1542',
       warrantyduration: '6 months',
       warrantyconditions: 'www.warrantyexample.com',
@@ -20,7 +20,7 @@ const data = {
     {
       id: '2',
       image:
-        'https://m.media-amazon.com/images/I/71zZiQGzc5L._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/41eC3XfDtjL._AC_SR160,160_.jpg',
       name: "ASIC'S Men's Badminton Shoes",
       stars: '⭐⭐⭐⭐',
       rating: '(24,451)',
@@ -37,7 +37,7 @@ const data = {
     {
       id: '3',
       image:
-        'https://m.media-amazon.com/images/I/71VB--jaeSL._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/41eC3XfDtjL._AC_SR160,160_.jpg',
       name: "ASIC'S Men's Badminton Shoes",
       stars: '⭐⭐⭐⭐',
       rating: '(24,451)',
@@ -53,8 +53,7 @@ const data = {
     },
     {
       id: '4',
-      image:
-        '',
+      image: '',
       name: "ASIC'S Men's Badminton Shoes",
       stars: '⭐⭐⭐⭐',
       rating: '(24,451)',
@@ -136,14 +135,7 @@ const data = {
       warrantyduration: '6 months',
       warrantyconditions: 'mmm',
     },
-    
   ],
 };
 
 module.exports = data;
-
-
-
-
-
-
