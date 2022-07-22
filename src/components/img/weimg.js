@@ -1,5 +1,35 @@
-import pic from "./lojo.png";
-function Webimage(){
- return <img className="login_img" src={pic}/>
+// import pic from "./lojo.png";
+// function Webimage(){
+//  return <img className="login_img" src={pic}/>
+// }
+// export default Webimage
+
+
+import pic from "./lojo.png"
+// import shoes from './shoes.png'
+// import SaleShoes from './leather.png'
+// import Lshoe from './Lshoe.jpg'
+import BB from "./bb.png"
+// import sale from "./SaleShoe.png"
+
+const Webimage=()=>{
+ return <img className="login_img" src={BB}/>
 }
-export default Webimage
+
+// const Shoes=()=>{
+//     return <img className="footer-banner-image" src={shoes}/>
+// }
+
+// const SaleShoe=()=>{
+//     return <img className="hero-banner-image" src={SaleShoes}/>
+// }
+
+const Webimage1=()=>{
+    return <img className="img1" src={BB}/>
+   }
+
+//    const LShoe=()=>{
+//     return <img className="" src={Lshoe}/>
+//    } 
+
+export {Webimage,Webimage1} 

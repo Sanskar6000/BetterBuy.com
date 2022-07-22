@@ -10,12 +10,13 @@ import {
 
 import Header from './components/Header.js';
 
+
 const Minter = (props) => {
   const params = useParams();
   const { slug } = params;
   const [product, setProduct] = useState({});
 
-  const URL = `http://localhost:5000/api/product/slug/${slug}`;
+  const URL = `http://localhost:8000/api/product/slug/${slug}`;
   console.log(URL);
 
   //Fetching Products
@@ -114,8 +115,15 @@ const Minter = (props) => {
       WarrantyConditions
     );
     setStatus(status);
-  };
 
+  };
+const onmail=async()=>{
+ 
+const res=await axios("http://localhost:8000/send")
+
+
+
+}
   return (
     <div>
       <Header />
@@ -146,7 +154,11 @@ const Minter = (props) => {
       <button id="mintButton" onClick={onMintPressed}>
         Buy Now
       </button>
-      <p id="status">{status}</p>
+      <button  onClick={onmail}>
+        send
+      </button>
+     
+
     </div>
   );
 };

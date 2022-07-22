@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function HomePage() {
   const [products, setProducts] = useState([]);
 
-  const url = 'http://localhost:5000/api/';
+  const url = 'http://localhost:8000/api/';
 
   //Fetching Products
   useEffect(() => {

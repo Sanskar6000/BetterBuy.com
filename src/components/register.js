@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./public/Login.css"
-import Webimage from './img/weimg';
+import {Webimage} from './img/weimg';
 function Register() {
   return (
     <div className="login">

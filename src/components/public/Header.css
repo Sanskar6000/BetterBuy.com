@@ -84,3 +84,64 @@
     color: white;
     margin: 0 10px 0;
   }
+
+  .n nav {
+    background-color: black;
+    width: 100%;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    margin-bottom: 20px;
+  }
+  
+  
+  .c{
+    align-items: left;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .c p{
+    margin: auto;
+    color: #fff;
+    margin-left: 20px;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Edu+NSW+ACT+Foundation&family=Exo+2:wght@300&family=Lora:ital@1&family=Merriweather:wght@300&family=Sawarabi+Mincho&display=swap');
+  
+  .c h3{
+  margin: auto;
+  margin-left: 20px;
+  font-family: 'Catamaran', sans-serif;
+  padding-right: 20px;
+  color: white;
+  
+  }
+  
+  .c input{
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.5;
+    width: 20rem;
+    /* margin-top: 12px; */
+    margin: auto;
+    margin-left: 50px;
+    
+  }
+  
+  
+  .login1 h3{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Catamaran', sans-serif;
+  }
+  .img1{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    
+ }
+ 
