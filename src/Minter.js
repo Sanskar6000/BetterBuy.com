@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import {
   connectWallet,
@@ -6,18 +8,58 @@ import {
   mintNFT,
 } from './utils/interact.js';
 
+import Header from './components/Header.js';
+
 const Minter = (props) => {
+  const params = useParams();
+  const { slug } = params;
+  const [product, setProduct] = useState({});
+
+  const URL = `http://localhost:5000/api/product/slug/${slug}`;
+  console.log(URL);
+
+  //Fetching Products
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const getProduct = () => {
+    axios
+      .get(`${URL}`)
+      .then((response) => {
+        console.log(response);
+        const allProducts = response.data;
+        setProduct(allProducts);
+      })
+      .catch((error) => console.log(`Error: ${error}`));
+  };
+
+  console.log(product);
+
   //State variables
+  var currentdate = new Date();
   const [walletAddress, setWallet] = useState('');
   const [status, setStatus] = useState('');
-  const url =
-    'https://images-na.ssl-images-amazon.com/images/I/81oqkwrsmxL.jpg';
-  const customerName = 'Ankit Ayush';
-  const name = 'Toy';
-  const SerialNumber = '1234-5678';
-  const IssueTime = 'Issue Time';
-  const WarrantyDuration = '5 months';
-  const WarrantyConditions = 'conditions';
+  const url = product.image;
+  const customerName = product.customername;
+  const name = product.name;
+  const SerialNumber = product.serialnumber;
+
+  const IssueTime =
+    currentdate.getDate() +
+    '/' +
+    (currentdate.getMonth() + 1) +
+    '/' +
+    currentdate.getFullYear() +
+    ' @ ' +
+    currentdate.getHours() +
+    ':' +
+    currentdate.getMinutes() +
+    ':' +
+    currentdate.getSeconds();
+
+  const WarrantyDuration = product.warrantyduration;
+  const WarrantyConditions = product.Warrantyconditions;
 
   function addWalletListener() {
     if (window.ethereum) {
@@ -75,7 +117,8 @@ const Minter = (props) => {
   };
 
   return (
-    <div className="Minter">
+    <div>
+      <Header />
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
           'Connected: ' +
@@ -89,6 +132,17 @@ const Minter = (props) => {
 
       <br></br>
 
+      {/* ----------------Product Screen-------------------- */}
+
+      <div>
+        {product.customerName}
+        <img src={product.image} alt={product.slug} />
+        {product.issuetime}
+        {product.name}
+        {product.price}
+      </div>
+
+      {/* ----------------Product Screen-------------------- */}
       <button id="mintButton" onClick={onMintPressed}>
         Buy Now
       </button>
