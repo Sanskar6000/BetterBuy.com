@@ -20,7 +20,9 @@ const Navbar = (props) => {
             </Link>
             <h3>Better Buy</h3>
             <p>About Us</p>
-
+            <Link to="/add-product">
+              <p>Add Product</p>
+            </Link>
             <input
               id="searchbar"
               type="text"

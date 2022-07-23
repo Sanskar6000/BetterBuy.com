@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import {
@@ -10,33 +10,10 @@ import {
 
 import Header from './components/Header.js';
 
-
 const Minter = (props) => {
   const params = useParams();
   const { slug } = params;
   const [product, setProduct] = useState({});
-
-  const URL = `http://localhost:8000/api/product/slug/${slug}`;
-  console.log(URL);
-
-  //Fetching Products
-  useEffect(() => {
-    getProduct();
-  }, []);
-
-  const getProduct = () => {
-    axios
-      .get(`${URL}`)
-      .then((response) => {
-        console.log(response);
-        const allProducts = response.data;
-        setProduct(allProducts);
-      })
-      .catch((error) => console.log(`Error: ${error}`));
-  };
-
-  console.log(product);
-
   //State variables
   var currentdate = new Date();
   const [walletAddress, setWallet] = useState('');
@@ -61,6 +38,25 @@ const Minter = (props) => {
 
   const WarrantyDuration = product.warrantyduration;
   const WarrantyConditions = product.Warrantyconditions;
+
+  const URL = `http://localhost:8000/api/product/slug/${slug}`;
+  console.log(URL);
+
+  //Fetching Products
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const getProduct = () => {
+    axios
+      .get(`${URL}`)
+      .then((response) => {
+        console.log(response);
+        const allProducts = response.data;
+        setProduct(allProducts);
+      })
+      .catch((error) => console.log(`Error: ${error}`));
+  };
 
   function addWalletListener() {
     if (window.ethereum) {
@@ -115,15 +111,47 @@ const Minter = (props) => {
       WarrantyConditions
     );
     setStatus(status);
-
   };
-const onmail=async()=>{
- 
-const res=await axios("http://localhost:8000/send")
 
+  /* -----Sending Email -------*/
+  const [email, setEmail] = useState();
+  const [text, setText] = useState('');
 
+  const onChangeInput = (e) => {
+    const { value } = e.target;
+    setEmail(value);
+    // setUser({ ...user, text: status });
+    console.log(email);
+  };
 
-}
+  const mailSubmit = (e) => {
+    e.preventDefault();
+    setText(status);
+
+    console.log('From mailSubmit:', email);
+    console.log('From mailSubmit:', text);
+
+    axios
+      .post('http://localhost:8000/create', {
+        email: email,
+        text: text,
+      })
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+  /* -----Sending Email -------*/
+
+  const onmail = async () => {
+    const res = await axios('http://localhost:8000/send');
+  };
+
   return (
     <div>
       <Header />
@@ -154,11 +182,19 @@ const res=await axios("http://localhost:8000/send")
       <button id="mintButton" onClick={onMintPressed}>
         Buy Now
       </button>
-      <button  onClick={onmail}>
-        send
-      </button>
-     
+      <p>{status}</p>
+      <form onSubmit={mailSubmit}>
+        <input
+          name="email"
+          required
+          value={email}
+          onChange={onChangeInput}
+          placeholder="email"
+        />
+        <button type="submit">submit</button>
+      </form>
 
+      <button onClick={onmail}>send</button>
     </div>
   );
 };

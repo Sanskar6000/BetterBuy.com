@@ -20,6 +20,18 @@ app.get('/api/product/slug/:slug', (req, res) => {
     res.status(404).send({ message: 'Product not Found' });
   }
 });
+const User = {
+  email: '',
+  text: '',
+};
+
+app.post('/create', function (req, res) {
+  User.email = req.body.email;
+  User.text = req.body.text;
+
+  console.log(User);
+  res.send('Received');
+});
 
 app.get('/send', (req, res) => {
   const nodemailer = require('nodemailer');
@@ -55,10 +67,10 @@ app.get('/send', (req, res) => {
 
       const mailOptions = {
         from: '<betterbuyhead@gmail.com>',
-        to: 'sanskaryerawar@gmail.com',
+        to: User.email,
         subject: 'Hello uiop ',
-        text: 'Hello from gmail email using API',
-        html: '<h1>Hello from gmail email using API</h1>',
+        text: User.text,
+        html: `<h1>${User.text}</h1>`,
       };
 
       const result = await transport.sendMail(mailOptions);
@@ -71,8 +83,12 @@ app.get('/send', (req, res) => {
   sendMail()
     .then((result) => console.log('Email sent...', result))
     .catch((error) => console.log(error.message));
+
+  res.send('Mail Sent');
 });
+
 const port = process.env.PORT || 8000;
+
 app.listen(port, () => {
   console.log(`Server is running at port ${port}`);
 });
