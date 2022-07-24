@@ -1,12 +1,17 @@
+require('dotenv').config();
 const express = require('express');
 const data = require('./data/data.js');
 const app = express();
+const mongoose = require('mongoose');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 var cors = require('cors');
 app.use(cors());
+
+const entryRouter = require('./routes/entryRouter.js');
+app.use('/api/entries', entryRouter);
 
 app.get('/api/products', (req, res) => {
   res.send(data.products);
@@ -91,4 +96,11 @@ const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log(`Server is running at port ${port}`);
+});
+
+// Connect to MongoDB
+const URI = process.env.MONGODB_URL;
+mongoose.connect(URI, (err) => {
+  if (err) throw err;
+  console.log('Connected to MongoDB');
 });

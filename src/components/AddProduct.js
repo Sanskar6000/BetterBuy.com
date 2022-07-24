@@ -1,27 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AddProduct() {
-  const [products, setProducts] = useState([]);
-
-  //   const url = 'http://localhost:8000/api/';
-
-  //   //Fetching Products
-  //   useEffect(() => {
-  //     getProducts();
-  //   }, []);
-
-  //   const getProducts = () => {
-  //     axios
-  //       .get(`${url}products`)
-  //       .then((response) => {
-  //         console.log(response);
-  //         const allProducts = response.data;
-  //         setProducts(allProducts);
-  //       })
-  //       .catch((error) => console.log(`Error: ${error}`));
-  //   };
-
   const [product, setProduct] = useState({
     id: '',
     image: '',
@@ -29,32 +10,69 @@ function AddProduct() {
     stars: '',
     rating: '',
     price: '',
-    slug: '',
+    slug: 'temp',
     description: '',
-    countInStock: '',
-    customername: '',
+    countInStock: 'temp',
+    customername: 'temp',
     serialnumber: '',
-    issuetime: '',
+    issuetime: 'temp',
     warrantyduration: '',
     warrantyconditions: '',
   });
-  const [err, setErr] = useState('');
+
+  const navigate = useNavigate();
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setProduct({ ...product, [name]: value });
-    setErr('');
   };
 
-  const insertObject = (e) => {
+  const createEntry = async (e) => {
     e.preventDefault();
-    products.push(product);
-    console.log(products);
+    try {
+      const {
+        id,
+        image,
+        name,
+        stars,
+        rating,
+        price,
+        slug,
+        description,
+        countInStock,
+        customername,
+        serialnumber,
+        issuetime,
+        warrantyduration,
+        warrantyconditions,
+      } = product;
+      const newEntry = {
+        id,
+        image,
+        name,
+        stars,
+        rating,
+        price,
+        slug,
+        description,
+        countInStock,
+        customername,
+        serialnumber,
+        issuetime,
+        warrantyduration,
+        warrantyconditions,
+      };
+      await axios.post('http://localhost:8000/api/entries', newEntry);
+
+      return navigate.push('/');
+    } catch (error) {
+      window.location.href = '/';
+    }
   };
 
   return (
     <div>
-      <form onSubmit={insertObject}>
+      <form onSubmit={createEntry}>
         <input
           name="id"
           required
@@ -97,14 +115,7 @@ function AddProduct() {
           onChange={onChangeInput}
           placeholder="price"
         />
-        <input
-          name="slug"
-          required
-          value={product.slug}
-          onChange={onChangeInput}
-          placeholder="slug"
-        />
-        <input
+        <textarea
           name="description"
           required
           value={product.description}
@@ -112,32 +123,11 @@ function AddProduct() {
           placeholder="description"
         />
         <input
-          name="countInStock"
-          required
-          value={product.countInStock}
-          onChange={onChangeInput}
-          placeholder="countInStock"
-        />
-        <input
-          name="customername"
-          required
-          value={product.customername}
-          onChange={onChangeInput}
-          placeholder="customername"
-        />
-        <input
           name="serialnumber"
           required
           value={product.serialnumber}
           onChange={onChangeInput}
           placeholder="serialnumber"
-        />
-        <input
-          name="issuetime"
-          required
-          value={product.issuetime}
-          onChange={onChangeInput}
-          placeholder="issuetime"
         />
         <input
           name="warrantyduration"
@@ -153,7 +143,7 @@ function AddProduct() {
           onChange={onChangeInput}
           placeholder="warrantyconditions"
         />
-        <input type="submit" value="Sunmit" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

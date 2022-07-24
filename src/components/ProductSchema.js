@@ -1,23 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './public/Products.css'
+import './public/Products.css';
 function ProductSchema(props) {
   const { product } = props;
   return (
-    
-    <div key={product.key} className="product-card">
-      <Link to={`/product/ ${product.slug}`}>
-        <img 
-         
-   
-         width={250}
-         height={250}
-         
-         className="product_img" src={product.image} alt={product.name} />
+    <div key={product.id} className="product-card">
+      <Link to={`/product/ ${product._id}`}>
+        <img
+          width={250}
+          height={250}
+          className="product_img"
+          src={product.image}
+          alt={product.name}
+        />
       </Link>
 
-      <Link to={`/product/${product.slug}`}>
-        <p className="product-name" >{product.name}</p>
+      <Link to={`/product/${product._id}`}>
+        <p className="product-name">{product.name}</p>
       </Link>
 
       <div className="productRating">

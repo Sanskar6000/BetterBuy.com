@@ -11,15 +11,31 @@ import {
 import Header from './components/Header.js';
 
 const Minter = (props) => {
-  const params = useParams();
-  const { slug } = params;
-  const [product, setProduct] = useState({});
+  const paramId = useParams().id;
+
+  const [product, setProduct] = useState({
+    id: '',
+    image: '',
+    name: '',
+    stars: '',
+    rating: '',
+    price: '',
+    slug: '',
+    description: '',
+    countInStock: '',
+    customername: '',
+    serialnumber: '',
+    issuetime: '',
+    warrantyduration: '',
+    warrantyconditions: '',
+  });
+
   //State variables
   var currentdate = new Date();
   const [walletAddress, setWallet] = useState('');
   const [status, setStatus] = useState('');
   const url = product.image;
-  const customerName = product.customername;
+  const customerName = `${walletAddress}(Wallet Address)`;
   const name = product.name;
   const SerialNumber = product.serialnumber;
 
@@ -39,24 +55,37 @@ const Minter = (props) => {
   const WarrantyDuration = product.warrantyduration;
   const WarrantyConditions = product.Warrantyconditions;
 
-  const URL = `http://localhost:8000/api/product/slug/${slug}`;
+  // const URL = `http://localhost:8000/api/product/slug/${slug}`;
   console.log(URL);
 
   //Fetching Products
   useEffect(() => {
-    getProduct();
-  }, []);
-
-  const getProduct = () => {
-    axios
-      .get(`${URL}`)
-      .then((response) => {
-        console.log(response);
-        const allProducts = response.data;
-        setProduct(allProducts);
-      })
-      .catch((error) => console.log(`Error: ${error}`));
-  };
+    const getEntry = async () => {
+      if (paramId) {
+        const res = await axios.get(
+          `http://localhost:8000/api/entries/${paramId}`
+        );
+        setProduct({
+          id: res.data.id,
+          image: res.data.image,
+          name: res.data.name,
+          stars: res.data.stars,
+          rating: res.data.rating,
+          price: res.data.price,
+          slug: res.data.slug,
+          description: res.data.description,
+          countInStock: res.data.countInStock,
+          customername: res.data.customername,
+          serialnumber: res.data.serialnumber,
+          issuetime: res.data.issuetime,
+          warrantyduration: res.data.warrantyduration,
+          warrantyconditions: res.data.warrantyconditions,
+          id: res.data._id,
+        });
+      }
+    };
+    getEntry();
+  }, [paramId]);
 
   function addWalletListener() {
     if (window.ethereum) {
@@ -170,33 +199,29 @@ const Minter = (props) => {
 
       {/* ----------------Product Screen-------------------- */}
 
-         <div className='desc-container'>
-     <div className='img-container'>
-        <img src={product.image}
-        height={400}
-        widtgh={400}
-        
-        />
-    <button className='buy_button' onClick={onMintPressed}>
-        Buy Now
-      </button>
-     </div>
-     <div className='content-container'> 
-        <h3>{product.name}</h3>
-        <h2>{product.stars}        {product.rating}</h2>
-        <h3>Only {product.countInStock} left Hurry up!</h3>
-        <h1>₹ {product.price} </h1>
-        <h4>About this Item</h4>
-        <ul>
-          <li>{product.description}</li>
-          
-        </ul>
-     </div>
-     </div>
-    
-    
+      <div className="desc-container">
+        <div className="img-container">
+          <img src={product.image} height={400} widtgh={400} />
+          <button className="buy_button" onClick={onMintPressed}>
+            Buy Now
+          </button>
+        </div>
+        <div className="content-container">
+          <h3>{product.name}</h3>
+          <h2>
+            {product.stars} {product.rating}
+          </h2>
+          <h3>Only {product.countInStock} left Hurry up!</h3>
+          <h1>₹ {product.price} </h1>
+          <h4>About this Item</h4>
+          <ul>
+            <li>{product.description}</li>
+          </ul>
+        </div>
+      </div>
+
       {/* ----------------Product Screen-------------------- */}
-      
+
       <p>{status}</p>
       <form onSubmit={mailSubmit}>
         <input
