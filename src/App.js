@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/add-product" element={<AddProduct />} />
-          <Route path="/product/:slug" element={<Minter />} />
+          <Route path="/product/%20:slug" element={<Minter />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
