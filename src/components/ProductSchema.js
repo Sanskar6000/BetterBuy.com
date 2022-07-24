@@ -1,16 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './public/Products.css'
 function ProductSchema(props) {
   const { product } = props;
   return (
-    <div key={product.key} className="product">
-      <Link to={`/product/${product.slug}`}>
-        <img src={product.image} alt={product.name} />
+    
+    <div key={product.key} className="product-card">
+      <Link to={`/product/ ${product.slug}`}>
+        <img 
+         
+   
+         width={250}
+         height={250}
+         
+         className="product_img" src={product.image} alt={product.name} />
       </Link>
 
       <Link to={`/product/${product.slug}`}>
-        <p>{product.name}</p>
+        <p className="product-name" >{product.name}</p>
       </Link>
 
       <div className="productRating">
@@ -18,7 +25,7 @@ function ProductSchema(props) {
         <span className="ratingNumber"> {product.rating}</span>
       </div>
 
-      <p className="productPrice">
+      <p className="product-price">
         <span>₹ </span>
         {product.price}
       </p>

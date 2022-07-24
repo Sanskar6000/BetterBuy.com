@@ -170,18 +170,33 @@ const Minter = (props) => {
 
       {/* ----------------Product Screen-------------------- */}
 
-      <div>
-        {product.customerName}
-        <img src={product.image} alt={product.slug} />
-        {product.issuetime}
-        {product.name}
-        {product.price}
-      </div>
-
-      {/* ----------------Product Screen-------------------- */}
-      <button id="mintButton" onClick={onMintPressed}>
+         <div className='desc-container'>
+     <div className='img-container'>
+        <img src={product.image}
+        height={400}
+        widtgh={400}
+        
+        />
+    <button className='buy_button' onClick={onMintPressed}>
         Buy Now
       </button>
+     </div>
+     <div className='content-container'> 
+        <h3>{product.name}</h3>
+        <h2>{product.stars}        {product.rating}</h2>
+        <h3>Only {product.countInStock} left Hurry up!</h3>
+        <h1>₹ {product.price} </h1>
+        <h4>About this Item</h4>
+        <ul>
+          <li>{product.description}</li>
+          
+        </ul>
+     </div>
+     </div>
+    
+    
+      {/* ----------------Product Screen-------------------- */}
+      
       <p>{status}</p>
       <form onSubmit={mailSubmit}>
         <input
