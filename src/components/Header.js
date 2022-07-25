@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import './public/Header.css';
+import { Webimage1 } from './img/weimg';
 const Navbar = (props) => {
   const { user } = props;
 
@@ -10,30 +11,23 @@ const Navbar = (props) => {
       <div className="n">
         <nav>
           <div className="c">
-            <Link to="/">
-              {' '}
-              <img
-                className="headerLogo"
-                src="https://i.postimg.cc/Dyy8jH0S/logo-bestd.jpg"
-                alt="logo"
-              />
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <h1 className="Logo_name">
+                <span className="Logo_name_span">&</span>BetterBuy
+              </h1>
             </Link>
-            <h3>Better Buy</h3>
-            <p>About Us</p>
-            <Link to="/add-product">
-              <p>Add Product</p>
+            <Link to="/add-product" style={{ textDecoration: 'none' }}>
+              <h5>Add Product</h5>
             </Link>
+
+            <h5>About Us</h5>
+
             <input
               id="searchbar"
               type="text"
               name="search"
-              placeholder="   Search for shoes..."
+              placeholder="   Search..."
             ></input>
-          </div>
-          <div className="login1">
-            <Link to="/login">
-              <h3>Logout</h3>
-            </Link>
           </div>
         </nav>
       </div>

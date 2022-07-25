@@ -86,14 +86,14 @@ i {
 }
 
 .n nav {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   width: 100%;
   padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  margin-bottom: 20px;
+  position: relative;
+  /* margin-bottom: 20px; */
 }
 
 .c {
@@ -103,19 +103,23 @@ i {
 }
 .c p {
   margin: auto;
-  color: #fff;
-  margin-left: 20px;
+  color: rgb(0, 0, 0);
+  margin-left: 30px;
   font-family: 'Catamaran', sans-serif;
+  padding-top: 14px;
+  margin-bottom: 10px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Edu+NSW+ACT+Foundation&family=Exo+2:wght@300&family=Lora:ital@1&family=Merriweather:wght@300&family=Sawarabi+Mincho&display=swap');
 
-.c h3 {
-  margin: auto;
-  margin-left: 20px;
+.c h5 {
+  font-size: 20px;
+  margin-left: 30px;
   font-family: 'Catamaran', sans-serif;
-  padding-right: 20px;
-  color: white;
+  /* padding-right: 20px; */
+  color: black;
+  margin-top: 9px;
+  font-weight: bold;
 }
 
 .c input {
@@ -137,4 +141,17 @@ i {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Lato:ital,wght@1,900&display=swap');
+.Logo_name {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  letter-spacing: 0.1rem;
+  font-size: 30px;
+}
+
+.Logo_name_span {
+  font-size: 33px;
+  font-family: 'EB Garamond', serif;
+  color: #25b0a9;
 }

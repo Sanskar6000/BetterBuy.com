@@ -33,8 +33,6 @@ function Login() {
             </>
           }
         </div>
-
-        {/* <button className="loginRegisterButton">Create your Amazon account</button> */}
       </div>
     </div>
   );

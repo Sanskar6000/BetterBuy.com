@@ -73,9 +73,21 @@ app.get('/send', (req, res) => {
       const mailOptions = {
         from: '<betterbuyhead@gmail.com>',
         to: User.email,
-        subject: 'Hello uiop ',
+        subject: 'Your Digital Warranty Card',
         text: User.text,
-        html: `<h1>${User.text}</h1>`,
+        html: `<head>
+        <meta charset="utf-8">
+        <style amp4email-boilerplate>body{visibility:hidden}</style>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+      </head>
+      <body>
+        <p>${User.text}</p>
+        <br/>
+        <p>You can import your digital waarranty in Metamask wallet: https://play.google.com/store/apps/details?id=io.metamask&hl=en_IN&gl=US</p>
+        <br/>
+        <p>View your digital warranty https://goerli.pixxiti.com/nfts/<token_address>/<token_id><p/>
+      </body>`,
       };
 
       const result = await transport.sendMail(mailOptions);

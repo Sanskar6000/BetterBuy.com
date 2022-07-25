@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './public/AddProduct.css';
+import Header from './Header.js';
 
 function AddProduct() {
   const [product, setProduct] = useState({
@@ -71,81 +73,135 @@ function AddProduct() {
   };
 
   return (
-    <div>
-      <form onSubmit={createEntry}>
-        <input
-          name="id"
-          required
-          value={product.id}
-          onChange={onChangeInput}
-          placeholder="id"
-        />
-        <input
-          name="image"
-          required
-          value={product.image}
-          onChange={onChangeInput}
-          placeholder="image"
-        />
-        <input
-          name="name"
-          required
-          value={product.name}
-          onChange={onChangeInput}
-          placeholder="name"
-        />
-        <input
-          name="stars"
-          required
-          value={product.stars}
-          onChange={onChangeInput}
-          placeholder="stars"
-        />
-        <input
-          name="rating"
-          required
-          value={product.rating}
-          onChange={onChangeInput}
-          placeholder="rating"
-        />
-        <input
-          name="price"
-          required
-          value={product.price}
-          onChange={onChangeInput}
-          placeholder="price"
-        />
-        <textarea
-          name="description"
-          required
-          value={product.description}
-          onChange={onChangeInput}
-          placeholder="description"
-        />
-        <input
-          name="serialnumber"
-          required
-          value={product.serialnumber}
-          onChange={onChangeInput}
-          placeholder="serialnumber"
-        />
-        <input
-          name="warrantyduration"
-          required
-          value={product.warrantyduration}
-          onChange={onChangeInput}
-          placeholder="warrantyduration"
-        />
-        <input
-          name="warrantyconditions"
-          required
-          value={product.warrantyconditions}
-          onChange={onChangeInput}
-          placeholder="warrantyconditions"
-        />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <>
+      <Header />
+      <div className="back">
+        <form className="form" onSubmit={createEntry}>
+          <div className="title">Welcome</div>
+          <div className="subtitle">Add Products Of your own</div>
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="id"
+              required
+              value={product.id}
+              onChange={onChangeInput}
+              placeholder="Id"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="image"
+              required
+              value={product.image}
+              onChange={onChangeInput}
+              placeholder="Image"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="name"
+              required
+              value={product.name}
+              onChange={onChangeInput}
+              placeholder="Name"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="stars"
+              required
+              value={product.stars}
+              onChange={onChangeInput}
+              placeholder="Stars"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="Rating"
+              required
+              value={product.rating}
+              onChange={onChangeInput}
+              placeholder="Rating"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="price"
+              required
+              value={product.price}
+              onChange={onChangeInput}
+              placeholder="Price"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <textarea
+              className="input"
+              name="description"
+              required
+              value={product.description}
+              onChange={onChangeInput}
+              placeholder="Description"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="serialnumber"
+              required
+              value={product.serialnumber}
+              onChange={onChangeInput}
+              placeholder="Serial Number"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="warrantyduration"
+              required
+              value={product.warrantyduration}
+              onChange={onChangeInput}
+              placeholder="Warranty Duration"
+            />
+            <div className="cut"></div>
+          </div>
+
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="warrantyconditions"
+              required
+              value={product.warrantyconditions}
+              onChange={onChangeInput}
+              placeholder="Warranty Conditions"
+            />
+            <div className="cut"></div>
+          </div>
+          <input type="submit" value="Submit" className="submit" />
+        </form>
+      </div>
+    </>
   );
 }
 

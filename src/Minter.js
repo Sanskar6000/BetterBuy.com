@@ -13,6 +13,8 @@ import Header from './components/Header.js';
 const Minter = (props) => {
   const paramId = useParams().id;
 
+  const [isBuy, setisBuy] = useState(false);
+
   const [product, setProduct] = useState({
     id: '',
     image: '',
@@ -130,6 +132,7 @@ const Minter = (props) => {
   };
 
   const onMintPressed = async () => {
+    setisBuy(true);
     const { status } = await mintNFT(
       name,
       url,
@@ -163,7 +166,7 @@ const Minter = (props) => {
     axios
       .post('http://localhost:8000/create', {
         email: email,
-        text: text,
+        text: status,
       })
       .then(
         (response) => {
@@ -184,7 +187,7 @@ const Minter = (props) => {
   return (
     <div>
       <Header />
-      <button id="walletButton" onClick={connectWalletPressed}>
+      <button id="walletButton" onClick={connectWalletPressed} className="btnn">
         {walletAddress.length > 0 ? (
           'Connected: ' +
           String(walletAddress).substring(0, 6) +
@@ -222,19 +225,27 @@ const Minter = (props) => {
 
       {/* ----------------Product Screen-------------------- */}
 
-      <p>{status}</p>
-      <form onSubmit={mailSubmit}>
-        <input
-          name="email"
-          required
-          value={email}
-          onChange={onChangeInput}
-          placeholder="email"
-        />
-        <button type="submit">submit</button>
-      </form>
-
-      <button onClick={onmail}>send</button>
+      {isBuy && (
+        <div>
+          {' '}
+          <p>{status}</p>
+          <form onSubmit={mailSubmit} className="btns">
+            <input
+              name="email"
+              required
+              value={email}
+              onChange={onChangeInput}
+              placeholder="email"
+            />
+            <button type="submit" className="btn1">
+              submit
+            </button>
+          </form>
+          <button onClick={onmail} className="btn2">
+            send
+          </button>
+        </div>
+      )}
     </div>
   );
 };

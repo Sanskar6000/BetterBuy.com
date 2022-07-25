@@ -1,7 +1,6 @@
 import './App.css';
 import Minter from './Minter';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Header from './components/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
 import Register from './components/register';
 import HomePage from './components/HomePage';
