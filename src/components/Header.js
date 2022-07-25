@@ -22,12 +22,12 @@ const Navbar = (props) => {
 
             <h5>About Us</h5>
 
-            <input
+            {/* <input
               id="searchbar"
               type="text"
               name="search"
               placeholder="   Search..."
-            ></input>
+            ></input> */}
           </div>
         </nav>
       </div>

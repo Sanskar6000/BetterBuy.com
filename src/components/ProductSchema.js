@@ -5,7 +5,7 @@ function ProductSchema(props) {
   const { product } = props;
   return (
     <div key={product.id} className="product-card">
-      <Link to={`/product/ ${product._id}`}>
+      <Link to={`/product/ ${product._id}`} style={{ textDecoration: 'none' }}>
         <img
           width={250}
           height={250}
@@ -15,7 +15,7 @@ function ProductSchema(props) {
         />
       </Link>
 
-      <Link to={`/product/${product._id}`}>
+      <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
         <p className="product-name">{product.name}</p>
       </Link>
 

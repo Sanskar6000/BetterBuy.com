@@ -94,7 +94,7 @@ const Minter = (props) => {
       window.ethereum.on('accountsChanged', (accounts) => {
         if (accounts.length > 0) {
           setWallet(accounts[0]);
-          setStatus('👆🏽 Write a message in the text-field above.');
+          setStatus('👇 Write your email address in the text-field .');
         } else {
           setWallet('');
           setStatus('🦊 Connect to Metamask using the top right button.');
@@ -187,16 +187,22 @@ const Minter = (props) => {
   return (
     <div>
       <Header />
-      <button id="walletButton" onClick={connectWalletPressed} className="btnn">
-        {walletAddress.length > 0 ? (
-          'Connected: ' +
-          String(walletAddress).substring(0, 6) +
-          '...' +
-          String(walletAddress).substring(38)
-        ) : (
-          <span>Connect Wallet</span>
-        )}
-      </button>
+      <div className="img-container wallet_button">
+        <button
+          id="walletButton"
+          onClick={connectWalletPressed}
+          className="btnn buy_button "
+        >
+          {walletAddress.length > 0 ? (
+            'Connected: ' +
+            String(walletAddress).substring(0, 6) +
+            '...' +
+            String(walletAddress).substring(38)
+          ) : (
+            <span>Connect Wallet</span>
+          )}
+        </button>
+      </div>
 
       <br></br>
 
@@ -228,22 +234,25 @@ const Minter = (props) => {
       {isBuy && (
         <div>
           {' '}
-          <p>{status}</p>
-          <form onSubmit={mailSubmit} className="btns">
-            <input
-              name="email"
-              required
-              value={email}
-              onChange={onChangeInput}
-              placeholder="email"
-            />
-            <button type="submit" className="btn1">
-              submit
+          <div className="mail">
+            <p>{status}</p>{' '}
+            <form onSubmit={mailSubmit}>
+              <input
+                name="email"
+                required
+                value={email}
+                onChange={onChangeInput}
+                placeholder="email"
+              />
+
+              <button type="submit" className="buy_button btn1 ">
+                submit
+              </button>
+            </form>
+            <button onClick={onmail} className="buy_button btn2">
+              send
             </button>
-          </form>
-          <button onClick={onmail} className="btn2">
-            send
-          </button>
+          </div>
         </div>
       )}
     </div>

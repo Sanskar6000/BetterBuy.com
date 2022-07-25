@@ -130,7 +130,7 @@ function AddProduct() {
           <div className="input-container ic1">
             <input
               className="input"
-              name="Rating"
+              name="rating"
               required
               value={product.rating}
               onChange={onChangeInput}
