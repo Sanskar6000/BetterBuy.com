@@ -84,9 +84,9 @@ app.get('/send', (req, res) => {
       <body>
         <p>${User.text}</p>
         <br/>
-        <p>You can import your digital waarranty in Metamask wallet: https://play.google.com/store/apps/details?id=io.metamask&hl=en_IN&gl=US</p>
+        <p>You can import your digital warranty in Metamask wallet: https://play.google.com/store/apps/details?id=io.metamask&hl=en_IN&gl=US</p>
         <br/>
-        <p>View your digital warranty https://goerli.pixxiti.com/nfts/<token_address>/<token_id><p/>
+        <p>View your digital warranty https://goerli.pixxiti.com/nfts/ token_address/token_id<p/>
       </body>`,
       };
 

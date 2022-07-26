@@ -14,7 +14,7 @@ function AddProduct() {
     price: '',
     slug: 'temp',
     description: '',
-    countInStock: 'temp',
+    countInStock: '',
     customername: 'temp',
     serialnumber: '',
     issuetime: 'temp',
@@ -159,6 +159,17 @@ function AddProduct() {
               value={product.description}
               onChange={onChangeInput}
               placeholder="Description"
+            />
+            <div className="cut"></div>
+          </div>
+          <div className="input-container ic1">
+            <input
+              className="input"
+              name="countInStock"
+              required
+              value={product.countInStock}
+              onChange={onChangeInput}
+              placeholder="Count in Stock"
             />
             <div className="cut"></div>
           </div>
