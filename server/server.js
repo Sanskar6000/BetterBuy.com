@@ -42,11 +42,11 @@ app.get('/send', (req, res) => {
   const nodemailer = require('nodemailer');
   const { google } = require('googleapis');
   const CLIENT_ID =
-    '203990915070-fvb522gbneso8rttul5qvjidm69d2423.apps.googleusercontent.com';
-  const CLEINT_SECRET = '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';
+    '785173687554-7b364finnjpo6eb28jd4r2gb0gsnrtac.apps.googleusercontent.com';
+  const CLEINT_SECRET = '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';
   const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
   const REFRESH_TOKEN =
-    '1//04FVbfb7mc9CECgYIARAAGAQSNwF-L9Ir5ALojrXhXL5v_XqQxPkQ9cMP1T226zl2WGYFifTvD4v6vm-38xekQMqGlER-WrDp8s8';
+    '1//04QOEt5E_-vMeCgYIARAAGAQSNwF-L9IrOhb-fMy5o7JQhPKgWAdGpMKDElbCirpywS5t2314L5tCUAJFr-K7MSgedasdaOdJYjg';
   const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
     CLEINT_SECRET,
