@@ -136,7 +136,8 @@ export const mintNFT = async (
       success: true,
       status:
         '✅ Check out your transaction on Etherscan: https://goerli.etherscan.io/tx/' +
-        txHash,
+        txHash +
+        '     View your digital warranty at https://goerli.pixxit.com/nfts/<token_address>/<token_id>',
     };
   } catch (error) {
     return {
