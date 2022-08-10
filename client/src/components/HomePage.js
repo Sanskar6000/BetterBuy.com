@@ -13,7 +13,7 @@ function HomePage() {
   const [entries, setEntries] = useState([]);
 
   const getEntries = async () => {
-    const res = await axios.get('http://localhost:8000/api/entries');
+    const res = await axios.get('/api/entries');
     setEntries(res.data);
   };
 

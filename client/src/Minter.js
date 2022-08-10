@@ -64,9 +64,7 @@ const Minter = (props) => {
   useEffect(() => {
     const getEntry = async () => {
       if (paramId) {
-        const res = await axios.get(
-          `http://localhost:8000/api/entries/${paramId}`
-        );
+        const res = await axios.get(`/api/entries/${paramId}`);
         setProduct({
           id: res.data.id,
           image: res.data.image,
@@ -164,7 +162,7 @@ const Minter = (props) => {
     console.log('From mailSubmit:', text);
 
     axios
-      .post('http://localhost:8000/create', {
+      .post('/create', {
         email: email,
         text: status,
       })
@@ -181,7 +179,7 @@ const Minter = (props) => {
   /* -----Sending Email -------*/
 
   const onmail = async () => {
-    const res = await axios('http://localhost:8000/send');
+    const res = await axios('/send');
   };
 
   return (

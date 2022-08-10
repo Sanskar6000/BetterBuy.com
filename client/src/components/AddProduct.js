@@ -64,7 +64,7 @@ function AddProduct() {
         warrantyduration,
         warrantyconditions,
       };
-      await axios.post('http://localhost:8000/api/entries', newEntry);
+      await axios.post('/api/entries', newEntry);
 
       return navigate.push('/');
     } catch (error) {
