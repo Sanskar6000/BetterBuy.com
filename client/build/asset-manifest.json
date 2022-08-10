@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1c506686.chunk.css",
+    "main.js": "/static/js/main.6ed9f34a.chunk.js",
+    "main.js.map": "/static/js/main.6ed9f34a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.eed24d34.js",
+    "runtime-main.js.map": "/static/js/runtime-main.eed24d34.js.map",
+    "static/js/2.3405cd27.chunk.js": "/static/js/2.3405cd27.chunk.js",
+    "static/js/2.3405cd27.chunk.js.map": "/static/js/2.3405cd27.chunk.js.map",
+    "static/js/3.b6b3a03a.chunk.js": "/static/js/3.b6b3a03a.chunk.js",
+    "static/js/3.b6b3a03a.chunk.js.map": "/static/js/3.b6b3a03a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.1c506686.chunk.css.map": "/static/css/main.1c506686.chunk.css.map",
+    "static/js/2.3405cd27.chunk.js.LICENSE.txt": "/static/js/2.3405cd27.chunk.js.LICENSE.txt",
+    "static/media/bb.f8eb5e88.png": "/static/media/bb.f8eb5e88.png",
+    "static/media/leather.5cff690f.png": "/static/media/leather.5cff690f.png",
+    "static/media/logo-best.a13b41f7.png": "/static/media/logo-best.a13b41f7.png",
+    "static/media/shoes.47e8fefd.png": "/static/media/shoes.47e8fefd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eed24d34.js",
+    "static/js/2.3405cd27.chunk.js",
+    "static/css/main.1c506686.chunk.css",
+    "static/js/main.6ed9f34a.chunk.js"
+  ]
+}

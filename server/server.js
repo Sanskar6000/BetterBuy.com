@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const data = require('./data/data.js');
 const app = express();
@@ -103,6 +104,13 @@ app.get('/send', (req, res) => {
 
   res.send('Mail Sent');
 });
+
+const dirname = path.resolve();
+app.use(express.static(path.join(dirname, '/client/build')));
+
+app.get('*', (req, res) =>
+  res.sendFile(path.join(dirname, '/client/build/index.html'))
+);
 
 const port = process.env.PORT || 8000;
 

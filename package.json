@@ -1,0 +1,21 @@
+{
+  "name": "betterbuy",
+  "version": "1.0.0",
+  "description": "BetterBuy",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanskar6000/BetterBuy.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sanskar6000/BetterBuy.com/issues"
+  },
+  "homepage": "https://github.com/Sanskar6000/BetterBuy.com#readme"
+}
