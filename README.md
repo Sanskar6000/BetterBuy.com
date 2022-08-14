@@ -77,4 +77,4 @@ If you want to contact me, you can reach me through below handles.
 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-![image](https://user-images.githubusercontent.com/81527719/184533599-a0108d53-7577-4e55-a1e0-035075f027b5.png)
+
