@@ -19,7 +19,9 @@ const Navbar = (props) => {
 //             <Link to="/add-product" style={{ textDecoration: 'none' }}>
 //               <h5>Add Product</h5>
 //             </Link>
-
+           
+              <h5>Add Product</h5>
+            
             <h5>About Us</h5>
 
             {/* <input
