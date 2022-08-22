@@ -16,9 +16,6 @@ const Navbar = (props) => {
                 <span className="Logo_name_span">&</span>BetterBuy
               </h1>
             </Link>
-//             <Link to="/add-product" style={{ textDecoration: 'none' }}>
-//               <h5>Add Product</h5>
-//             </Link>
            
               <h5>Add Product</h5>
             
